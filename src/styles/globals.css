@@ -67,14 +67,34 @@ main {
   scrollbar-color: var(--clr-foreground) transparent;
 }
 .msg {
+  --arrow-size: 0.8rem;
+  position: relative;
   max-width: var(--msg-max-width);
   padding: 1.2rem;
   white-space: pre-wrap;
   border: 0.1rem solid var(--clr-foreground);
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0.1rem;
+    width: var(--arrow-size);
+    height: var(--arrow-size);
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    background-color: var(--clr-foreground);
+    pointer-events: none;
+  }
   &.msg-agent {
+    &::before {
+      left: calc(var(--arrow-size) * -0.5);
+      transform: rotate(-45deg);
+    }
     align-self: flex-start;
   }
   &.msg-user {
+    &::before {
+      right: calc(var(--arrow-size) * -0.5);
+      transform: rotate(135deg);
+    }
     align-self: flex-end;
     background-color: oklch(from var(--clr-foreground) l c h / 0.1);
   }
