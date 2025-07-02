@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <nav id="top-nav">NAV</nav>
+        <nav id="top-nav">DATASHADE 0.47.117</nav>
         <main>{children}</main>
       </body>
     </html>
