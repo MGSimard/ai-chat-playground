@@ -77,7 +77,7 @@ main {
   &::before {
     content: "";
     position: absolute;
-    top: 0.1rem;
+    top: 0.4rem;
     width: var(--arrow-size);
     height: var(--arrow-size);
     clip-path: polygon(0 0, 100% 0, 0 100%);
